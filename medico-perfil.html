@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/medico-perfil.css" />
+    <title>MedConecta - Perfil do Médico</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="buscar-medicos.html" data-qa="header-logo-link">
+        <img src="img/logo_medconecta_header.png" alt="MedConecta" class="header__logo" />
+      </a>
+      <nav class="header__nav">
+      <a href="buscar-medicos.html" aria-current="page" data-qa="nav-buscar-medicos">Buscar Médicos</a>
+      <a href="minhas-consultas.html" data-qa="nav-minhas-consultas">Minhas Consultas</a>
+      <a href="perfil-paciente.html" data-qa="nav-perfil-paciente">Meu Perfil</a>
+      </nav>
+    </header>
+    <div id="barraSessao"></div>
+
+    <main class="page">
+      <a href="buscar-medicos.html" class="btn btn--icon" data-qa="link-voltar"><img src="img/icons/arrow.png" alt="" class="icon" /> Voltar</a>
+
+      <div class="card profile-summary mt-section" id="perfilMedico" data-qa="perfil-medico-info"></div>
+
+      <div class="info-row"><img src="img/icons/place-marker.png" alt="" class="icon" /> <span id="cidadeMedico" data-qa="texto-cidade"></span></div>
+      <div class="info-row"><img src="img/icons/department.png" alt="" class="icon" /> <span id="enderecoMedico" data-qa="texto-endereco"></span></div>
+      <div class="info-row"><img src="img/icons/phone.png" alt="" class="icon" /> <span id="telefoneMedico" data-qa="texto-telefone"></span></div>
+      <div class="info-row"><img src="img/icons/card.png" alt="" class="icon" /> <span id="valorMedico" data-qa="texto-valor"></span></div>
+      <div class="info-row"><img src="img/icons/schedule.png" alt="" class="icon" /> <span id="disponibilidadeMedico" data-qa="texto-disponibilidade"></span></div>
+
+      <h2 class="page__title mt-section" style="font-size: 1.2rem;">Solicitar consulta</h2>
+      <p class="page__subtitle">A consulta terá duração de 45 minutos.</p>
+
+      <form id="formSolicitacao" data-qa="form-solicitacao">
+        <div class="form-field">
+          <label for="dataConsulta">Data</label>
+          <input type="date" id="dataConsulta" class="form-input" required data-qa="input-data-consulta" />
+        </div>
+        <div class="form-field">
+          <label for="horaConsulta">Hora</label>
+          <select id="horaConsulta" class="form-input" required data-qa="input-hora-consulta">
+            <option value="">Selecione um horário</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="queixaPrincipal">Queixa principal (opcional)</label>
+          <textarea id="queixaPrincipal" class="form-input" rows="3" placeholder="Descreva brevemente o motivo da consulta" data-qa="input-queixa-principal"></textarea>
+        </div>
+        <div class="form-error" id="erroSolicitacao" data-qa="erro-solicitacao"></div>
+        <button type="submit" class="btn btn--primary" data-qa="btn-enviar-solicitacao">Enviar solicitação</button>
+      </form>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/interface.js"></script>
+    <script src="js/medico-perfil.js"></script>
+  </body>
+</html>

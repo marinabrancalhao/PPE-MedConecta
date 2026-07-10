@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/minhas-consultas-medico.css" />
+    <title>MedConecta - Minhas Consultas</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="minhas-consultas-medico.html" data-qa="header-logo-link">
+        <img src="img/logo_medconecta_header.png" alt="MedConecta" class="header__logo" />
+      </a>
+      <nav class="header__nav">
+      <a href="minhas-consultas-medico.html" aria-current="page" data-qa="nav-minhas-consultas-medico">Minhas Consultas</a>
+      <a href="solicitacoes-medico.html" data-qa="nav-solicitacoes-medico">Minhas Solicitações</a>
+      <a href="perfil-medico.html" data-qa="nav-perfil-medico">Meu Perfil</a>
+      </nav>
+    </header>
+    <div id="barraSessao"></div>
+
+    <main class="page">
+      <h1 class="page__title">Minhas consultas</h1>
+      <p class="page__subtitle">Consultas confirmadas com seus pacientes</p>
+
+      <div class="grupo-filtros" id="filtrosConsulta" data-qa="filtros-consulta">
+        <button class="botao-filtro" aria-pressed="true" data-filtro="todas" data-qa="filtro-todas">Todas</button>
+        <button class="botao-filtro" aria-pressed="false" data-filtro="hoje" data-qa="filtro-hoje">Hoje</button>
+        <button class="botao-filtro" aria-pressed="false" data-filtro="dia" data-qa="filtro-por-dia">Por dia</button>
+        <button class="botao-filtro" aria-pressed="false" data-filtro="mes" data-qa="filtro-por-mes">Por mês</button>
+      </div>
+
+      <div class="form-field" id="campoData" style="display: none;">
+        <label for="dataFiltro">Escolha o dia</label>
+        <input type="date" id="dataFiltro" class="form-input" data-qa="input-data-filtro" />
+      </div>
+
+      <div class="form-field" id="campoMes" style="display: none;">
+        <label for="mesFiltro">Escolha o mês</label>
+        <input type="month" id="mesFiltro" class="form-input" data-qa="input-mes-filtro" />
+      </div>
+
+      <div id="listaConsultas" data-qa="lista-consultas-medico"></div>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/interface.js"></script>
+    <script src="js/minhas-consultas-medico.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>MedConecta</title>
+  </head>
+  <body class="no-scroll-body">
+    <main class="hero-split">
+      <div class="hero-split__image">
+        <img src="img/banner_inicio.jpg" alt="Médico segurando a mão de um paciente" />
+      </div>
+
+      <div class="hero-split__content">
+        <div class="hero-split__content-inner">
+          <img src="img/logo_medconecta.png" alt="MedConecta - Cuidando com Conexão" class="hero-split__logo" />
+
+          <div class="profile-options">
+            <button class="btn btn--profile" data-qa="btn-sou-paciente" onclick="window.location.href='login-paciente.html'">
+              <img src="img/icons/user.png" alt="" class="icon" /> Sou Paciente
+            </button>
+            <button class="btn btn--profile" data-qa="btn-sou-medico" onclick="window.location.href='login-medico.html'">
+              <img src="img/icons/stethoscope.png" alt="" class="icon" /> Sou Médico
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

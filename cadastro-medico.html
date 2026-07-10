@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/cadastro-medico.css" />
+    <title>MedConecta - Cadastro Médico</title>
+  </head>
+  <body>
+    <main class="auth-page" style="max-width: 460px;">
+      <div class="card">
+        <h1>Cadastro de Médico</h1>
+        <p class="page__subtitle">Divulgue seus serviços e gerencie sua agenda</p>
+
+        <form id="formCadastro" data-qa="form-cadastro-medico">
+          <div class="form-field profile-photo-field">
+            <label>Foto de perfil</label>
+            <div class="profile-photo-preview">
+              <img id="previewFoto" src="img/icons/user.png" alt="Pré-visualização da foto" data-qa="preview-foto" />
+            </div>
+            <input type="file" id="fotoPerfil" accept="image/*" data-qa="input-foto-perfil" />
+            <div class="form-error" id="erroFoto" data-qa="erro-foto"></div>
+            <small style="color: var(--text-muted);">Obrigatório — os pacientes veem essa foto ao escolher um médico</small>
+          </div>
+          <div class="form-field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" class="form-input" required data-qa="input-nome" />
+            <div class="form-error" data-erro-de="nome" data-qa="erro-nome"></div>
+            <small style="color: var(--text-muted);">Digite só o seu nome, sem "Dr." ou "Dra." — isso aparece automático pros pacientes</small>
+          </div>
+          <div class="form-field">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" class="form-input" required data-qa="select-sexo">
+              <option value="">Selecione...</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="crm">CRM</label>
+            <input type="text" id="crm" class="form-input" placeholder="CRM-SP 123456" required data-qa="input-crm" />
+          </div>
+          <div class="form-field">
+            <label for="especialidade">Especialidade</label>
+            <select id="especialidade" class="form-input" required data-qa="select-especialidade">
+              <option value="">Selecione...</option>
+              <option>Cardiologia</option>
+              <option>Dermatologia</option>
+              <option>Ortopedia</option>
+              <option>Pediatria</option>
+              <option>Ginecologia</option>
+              <option>Pneumologia</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" class="form-input" placeholder="00000-000" data-qa="input-cep" />
+            <small style="color: var(--text-muted);">Preenche cidade/endereço automaticamente (BrasilAPI)</small>
+          </div>
+          <div class="form-field">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" class="form-input" data-qa="input-endereco" />
+          </div>
+          <div class="form-field">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" class="form-input" placeholder="São Paulo - SP" required data-qa="input-cidade" />
+          </div>
+          <div class="form-field">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" class="form-input" placeholder="(11) 99999-9999" required data-qa="input-telefone" />
+          </div>
+          <div class="form-field">
+            <label for="valorConsulta">Valor da consulta (R$)</label>
+            <input type="number" id="valorConsulta" class="form-input" min="0" step="10" required data-qa="input-valor-consulta" />
+          </div>
+
+          <div class="form-field">
+            <label>Dias de atendimento</label>
+            <div class="weekday-picker" data-qa="dias-atendimento">
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-seg" value="seg" data-qa="checkbox-dia-seg" />
+                <label for="dia-seg">Seg</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-ter" value="ter" data-qa="checkbox-dia-ter" />
+                <label for="dia-ter">Ter</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-qua" value="qua" data-qa="checkbox-dia-qua" />
+                <label for="dia-qua">Qua</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-qui" value="qui" data-qa="checkbox-dia-qui" />
+                <label for="dia-qui">Qui</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-sex" value="sex" data-qa="checkbox-dia-sex" />
+                <label for="dia-sex">Sex</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-sab" value="sab" data-qa="checkbox-dia-sab" />
+                <label for="dia-sab">Sáb</label>
+              </div>
+            </div>
+            <div class="form-error" id="erroDias" data-qa="erro-dias"></div>
+          </div>
+
+          <div class="time-range">
+            <div class="form-field">
+              <label for="horaInicio">Atende a partir de</label>
+              <input type="time" id="horaInicio" class="form-input" value="08:00" required data-qa="input-hora-inicio" />
+            </div>
+            <div class="form-field">
+              <label for="horaFim">Atende até</label>
+              <input type="time" id="horaFim" class="form-input" value="18:00" required data-qa="input-hora-fim" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="form-input" required data-qa="input-email" />
+            <div class="form-error" data-erro-de="email" data-qa="erro-email"></div>
+          </div>
+          <div class="form-field">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" class="form-input" required minlength="6" data-qa="input-senha" />
+            <div class="form-error" data-erro-de="senha" data-qa="erro-senha"></div>
+          </div>
+
+          <button type="submit" class="btn btn--primary" data-qa="btn-cadastrar">Cadastrar</button>
+        </form>
+
+        <p class="auth-link">
+          Já tem conta? <a href="login-medico.html" data-qa="link-login-medico">Fazer login</a>
+        </p>
+      </div>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/interface.js"></script>
+    <script src="js/cadastro-medico.js"></script>
+  </body>
+</html>

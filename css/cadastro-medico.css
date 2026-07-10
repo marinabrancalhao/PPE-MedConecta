@@ -1,0 +1,22 @@
+/* Upload e pré-visualização da foto de perfil */
+.profile-photo-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.profile-photo-preview {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--primary-light);
+  border: 1.5px solid var(--border-color);
+}
+
+.profile-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

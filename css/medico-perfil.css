@@ -1,0 +1,35 @@
+/* Resumo do médico no topo da página de perfil */
+.profile-summary {
+  display: flex;
+  gap: 0.875rem;
+  align-items: center;
+}
+
+.profile-summary__avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.profile-summary__avatar--foto {
+  object-fit: cover;
+  font-size: 0;
+}
+
+/* Linhas de informação (endereço, telefone, valor, disponibilidade) */
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+}

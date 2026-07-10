@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/perfil-medico.css" />
+    <title>MedConecta - Meu Perfil</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="minhas-consultas-medico.html" data-qa="header-logo-link">
+        <img src="img/logo_medconecta_header.png" alt="MedConecta" class="header__logo" />
+      </a>
+      <nav class="header__nav">
+      <a href="minhas-consultas-medico.html" data-qa="nav-minhas-consultas-medico">Minhas Consultas</a>
+      <a href="solicitacoes-medico.html" data-qa="nav-solicitacoes-medico">Minhas Solicitações</a>
+      <a href="perfil-medico.html" aria-current="page" data-qa="nav-perfil-medico">Meu Perfil</a>
+      </nav>
+    </header>
+    <div id="barraSessao"></div>
+
+    <main class="page">
+      <h1 class="page__title">Meu perfil profissional</h1>
+      <p class="page__subtitle">Atualize seus dados e horários de atendimento</p>
+
+      <div class="card">
+        <form id="formPerfil" data-qa="form-perfil-medico">
+          <div class="form-field profile-photo-field">
+            <label>Foto de perfil</label>
+            <div class="profile-photo-preview">
+              <img id="previewFoto" src="img/icons/user.png" alt="Pré-visualização da foto" data-qa="preview-foto" />
+            </div>
+            <input type="file" id="fotoPerfil" accept="image/*" data-qa="input-foto-perfil" />
+            <small style="color: var(--text-muted);">JPG ou PNG, a imagem será redimensionada automaticamente</small>
+          </div>
+          <div class="form-field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" class="form-input" required data-qa="input-nome" />
+            <div class="form-error" data-erro-de="nome" data-qa="erro-nome"></div>
+            <small style="color: var(--text-muted);">Digite só o seu nome, sem "Dr." ou "Dra." — isso aparece automático pros pacientes</small>
+          </div>
+          <div class="form-field">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" class="form-input" required data-qa="select-sexo">
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="crm">CRM</label>
+            <input type="text" id="crm" class="form-input" required data-qa="input-crm" />
+          </div>
+          <div class="form-field">
+            <label for="especialidade">Especialidade</label>
+            <select id="especialidade" class="form-input" required data-qa="select-especialidade">
+              <option>Cardiologia</option>
+              <option>Dermatologia</option>
+              <option>Ortopedia</option>
+              <option>Pediatria</option>
+              <option>Ginecologia</option>
+              <option>Pneumologia</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" class="form-input" placeholder="00000-000" data-qa="input-cep" />
+            <small style="color: var(--text-muted);">Preenche cidade/endereço automaticamente (BrasilAPI)</small>
+          </div>
+          <div class="form-field">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" class="form-input" data-qa="input-endereco" />
+          </div>
+          <div class="form-field">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" class="form-input" required data-qa="input-cidade" />
+          </div>
+          <div class="form-field">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" class="form-input" required data-qa="input-telefone" />
+          </div>
+          <div class="form-field">
+            <label for="valorConsulta">Valor da consulta (R$)</label>
+            <input type="number" id="valorConsulta" class="form-input" min="0" step="10" required data-qa="input-valor-consulta" />
+          </div>
+
+          <div class="form-field">
+            <label>Dias de atendimento</label>
+            <div class="weekday-picker" data-qa="dias-atendimento">
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-seg" value="seg" data-qa="checkbox-dia-seg" />
+                <label for="dia-seg">Seg</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-ter" value="ter" data-qa="checkbox-dia-ter" />
+                <label for="dia-ter">Ter</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-qua" value="qua" data-qa="checkbox-dia-qua" />
+                <label for="dia-qua">Qua</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-qui" value="qui" data-qa="checkbox-dia-qui" />
+                <label for="dia-qui">Qui</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-sex" value="sex" data-qa="checkbox-dia-sex" />
+                <label for="dia-sex">Sex</label>
+              </div>
+              <div class="weekday-picker__day">
+                <input type="checkbox" id="dia-sab" value="sab" data-qa="checkbox-dia-sab" />
+                <label for="dia-sab">Sáb</label>
+              </div>
+            </div>
+            <div class="form-error" id="erroDias" data-qa="erro-dias"></div>
+          </div>
+
+          <div class="time-range">
+            <div class="form-field">
+              <label for="horaInicio">Atende a partir de</label>
+              <input type="time" id="horaInicio" class="form-input" required data-qa="input-hora-inicio" />
+            </div>
+            <div class="form-field">
+              <label for="horaFim">Atende até</label>
+              <input type="time" id="horaFim" class="form-input" required data-qa="input-hora-fim" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="form-input" required data-qa="input-email" />
+            <div class="form-error" data-erro-de="email" data-qa="erro-email"></div>
+          </div>
+
+          <button type="submit" class="btn btn--primary" data-qa="btn-salvar">Salvar alterações</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="js/dados.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/interface.js"></script>
+    <script src="js/perfil-medico.js"></script>
+  </body>
+</html>

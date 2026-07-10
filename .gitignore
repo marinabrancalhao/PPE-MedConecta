@@ -1,0 +1,30 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cypress artifacts
+cypress/screenshots
+cypress/videos
+cypress/downloads
+
+# Allure
+allure-results/
+allure-report/
+
+# Builds/coverage temporários
+dist/
+coverage/
+.tmp/
+temp/
+logs/
+
+# GitLab Pages local
+public/
+
+# SO/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

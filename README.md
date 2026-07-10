@@ -122,7 +122,7 @@ cd PPE-MedConecta
 npm ci
 ```
 
-> `npm ci` instala exatamente as versões travadas no `package-lock.json`, garantindo o mesmo ambiente usado no desenvolvimento e no GitHub Actions.
+> `npm ci` instala exatamente as versões travadas no `package-lock.json`, garantindo o mesmo ambiente usado no desenvolvimento.
 
 **Interface gráfica (modo interativo):**
 
@@ -149,7 +149,7 @@ npx allure generate --clean allure-results -o allure-report
 npx allure open allure-report
 ```
 
-## Limitações conhecidas (de propósito, por ser um projeto acadêmico)
+## Limitações conhecidas (proposital, por ser um projeto acadêmico)
 
 - Sem back-end de verdade - login e senha não são seguros como seriam num sistema real
 - Sem recuperação de senha

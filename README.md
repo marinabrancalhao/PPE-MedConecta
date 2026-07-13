@@ -117,7 +117,7 @@ O fluxo de agendamento de consulta (do lado do paciente até a resposta do médi
 Diferente do site em si, os testes precisam de Node.js instalado e das dependências do projeto. Pra rodar:
 
 ```bash
-git clone https://github.com/<seu-usuario>/PPE-MedConecta.git
+git clone https://github.com/marinabrancalhao/PPE-MedConecta.git
 cd PPE-MedConecta
 npm ci
 ```
